@@ -1,0 +1,37 @@
+{
+  "name": "angular-date-picker",
+  "version": "1.0.0",
+  "description": "date-picker-module",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-bootstrap": "^0.12.2",
+    "bootstrap-sass": "^3.3.5",
+    "moment": "^2.10.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "requirejs": "^2.1.20"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huxiangtao/angular-date-picker.git"
+  },
+  "keywords": [
+    "datepicker"
+  ],
+  "author": "huxt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huxiangtao/angular-date-picker/issues"
+  },
+  "homepage": "https://github.com/huxiangtao/angular-date-picker#readme"
+}
