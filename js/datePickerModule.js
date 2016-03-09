@@ -9,7 +9,13 @@ define(
     ],
     function(ng) {
         "use strict";
-        return ng.module('datePickerModule',[]).directive('datepicker',['$log',function($log) {
+        return ng.module('datePickerModule',[])
+            .constant('datePickerConf',{
+                minuteStep: 5,
+                minView: 'minute',
+                startView: 'day'
+            })
+            .directive('datepicker',['$log','datePickerConf',function($log,defaultConf) {
             return {
                 restrict:'E',
                 template:
@@ -39,11 +45,25 @@ define(
 
                 replace:true,
                 link:function(scope,element,attrs) {
-                    /*var directiveConfig = {minView:'hour'};
-                    if (attrs.datepickerConfig) {
-                        directiveConfig = scope.$parent.$eval(attrs.datetimepickerConfig);
 
-                    }*/
+                    var dateFactory = {
+                        year:function() {},
+
+                        month:function() {},
+
+                        day:function() {},
+
+                        hour:function() {},
+
+                        minute:function() {},
+
+                        setTime:function() {}
+                    };
+
+                    scope.changeView = function() {
+                        var result = dateFactory[viewName](dateObject.dateValue);
+                        scope.data = result;
+                    }
                     scope.openDatePicker = function(event) {
                         if(event) event.preventDefault();
                         if(!scope.checked){
