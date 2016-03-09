@@ -3,9 +3,9 @@
  */
 
 require.config({
-    baseUrl: 'js',
+    baseUrl: 'dist/js',
     paths: {
-        'angular': '../node_modules/angular/angular.min',
+        'angular': '../node_modules/angular.min',
         'domReady': './vendor/domReady',
 
     },

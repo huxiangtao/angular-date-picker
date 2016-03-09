@@ -12,9 +12,23 @@ define(
         return ng.module('datePickerModule',[]).directive('datepicker',function() {
                     return {
                         restrict:'E',
-                        template:"<div>" +
-                                "<p>{{item}}</p>" +
-                                "</div>",
+                        template:'<div class="datetimepicker table-responsive">' +
+                                    '<table class="table table-striped">' +
+                                        '<thead>' +
+                                            '<tr>' +
+                                                '<th class="left"></th>' +
+                                                '<th class="switch"></th>' +
+                                                '<th class="right"></th>' +
+                                            '</tr>' +
+                                            '<tr>' +
+                                                '<th class="dow" data-ng-repeat="day in data.dayNames" >{{ day }}</th>' +
+                                            '</tr>' +
+                                        '</thead>' +
+                                        '<tbody>' +
+                                            '<tr></tr>' +
+                                        '</tbody>' +
+                                    '</table>' +
+                                  '</div>',
                         replace:true,
                         link:function(scope) {
                             scope.item = "hello world!"
