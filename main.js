@@ -6,11 +6,13 @@ require.config({
     baseUrl: 'dist/js',
     paths: {
         'angular': '../node_modules/angular.min',
+        'moment': '../node_modules/moment.min',
         'domReady': './vendor/domReady',
 
     },
     shim: {
-        'angular': {'exports': 'angular', 'deps': ['']}
+        'angular': {'exports': 'angular', 'deps': ['']},
+        'moment': {'exports': 'moment', 'deps': ['']}
     },
     deps: ['appBoot']
 });
