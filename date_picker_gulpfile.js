@@ -17,10 +17,13 @@ gulp.task('nodemodules',['nodeclean'],function() {
     return gulp.src([
         'node_modules/angular/angular.min.js',
         'node_modules/moment/min/moment.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/angular-bootstrap/ui-bootstrap.min.js',
         'node_modules/moment/locale/zh-cn.js',
         'node_modules/angular-animate/angular-animate.min.js',
         'node_modules/angular-bootstrap/ui-bootstrap-tpls.min.js',
         'node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+        'node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js'
     ])
         .pipe(gulp.dest('dist/node_modules'))
 })
@@ -41,7 +44,7 @@ gulp.task('cssclean',function() {
        .pipe(clean());
 });
 gulp.task('sass',['cssclean','bootstrap'],function() {
-    return gulp.src('sass/date-picker.scss')
+    return gulp.src(['sass/date-picker.scss','sass/datetimepicker.scss'])
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({outputStyle: 'compressed'}))
@@ -82,6 +85,6 @@ gulp.task('images',['iamgesclean'],function() {
         .pipe(gulp.dest('dist/images'));
 })
 
-gulp.task('datepickerbuild',[/*'nodemodules','sass',*/'jsmin'/*,'fonts','images'*/]);
+gulp.task('datepickerbuild',['nodemodules','sass','jsmin','fonts','images']);
 
 
