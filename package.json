@@ -8,7 +8,9 @@
     "angular-animate": "^1.4.7",
     "angular-bootstrap": "^0.12.2",
     "bootstrap-sass": "^3.3.5",
-    "moment": "^2.10.6"
+    "moment": "^2.10.6",
+    "angular-bootstrap-datetimepicker": "^0.4.0",
+    "jquery": "^2.1.4"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

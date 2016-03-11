@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="dist/css/date-picker.css">
     <script data-main="main.js" src="node_modules/requirejs/require.js"></script>
     <script>
-        var appName = "datePickerModule"
+        var appName = "testModule"
     </script>
 </head>
 <body>
@@ -15,22 +15,27 @@
         position:relative;
     }
 </style>
-<div class="container">
+<div class="container" ng-controller="testCtrl">
     <div class="row">
         <div class="col-lg-3">
-            <p style="margin:1000px;"></p>
+            <p style="margin:50px;"></p>
             <p id="test">dfsdfasfd</p>
             <p>date time picker</p>
-            <datepicker date-picker-config="{minView:'minute'}"></datepicker>
+            <!--<div class="input-group" >
+                <input type="text" id="dateInput" data-ng-model="date" data-ng-focus="openDatePicker($event)" data-ng-blur="closeDatePicker($event)" class="form-control text-center" placeholder="start time ~ end time">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></div>' +
+            </div>-->
+            <datepicker data-ng-model="date" date-picker-config="{minView:'minute'}"></datepicker>
+            <p>{{date}}</p>
         </div>
     </div>
 </div>
 <script type="text/javascript">
-    var dom = document.getElementById('test');
+    /*var dom = document.getElementById('test');
 
     document.addEventListener('scroll',function() {
         console.log(dom.getBoundingClientRect());
-    })
+    })*/
 </script>
 </body>
 </html>

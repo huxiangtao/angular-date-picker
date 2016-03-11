@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date-picker-module</title>
+    <link rel="stylesheet" href="dist/css/date-picker.css">
+    <link rel="stylesheet" href="dist/css/datetimepicker.css">
+    <script data-main="main.js" src="node_modules/requirejs/require.js"></script>
+    <script>
+        var appName = "testModule2"
+    </script>
+</head>
+<body>
+<style>
+    #dateInput {
+        position:relative;
+    }
+</style>
+<div class="container" ng-controller="testCtrl">
+    <div class="row">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" style="color:red;">会议时间：</label>
+            <div class="col-sm-2" >
+                <div class="dropdown-toggle" id="dropdown1" role="button" data-toggle="dropdown" data-target="#" href="#">
+                    <input type="text" class="form-control" data-ng-model="meetFormData.time" date-format>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker data-ng-model="meetFormData.time" data-datetimepicker-config="{ dropdownSelector: '#dropdown1', minView:'minute'}" />
+                </ul>
+            </div>
+            <span style="float: left; line-height: 32px;">－</span>
+            <div class="col-sm-2" >
+                <div class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+                    <input type="text" class="form-control" data-ng-model="meetFormData.endTime" date-format>
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker data-ng-model="meetFormData.endTime" data-datetimepicker-config="{ dropdownSelector: '#dropdown2', minView:'minute'}" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

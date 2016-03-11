@@ -7,12 +7,17 @@ require.config({
     paths: {
         'angular': '../node_modules/angular.min',
         'moment': '../node_modules/moment.min',
+        'datetimepicker': '../node_modules/datetimepicker',
+        'bootstrap': '../node_modules/bootstrap.min',
+        'jquery': '../node_modules/jquery.min',
         'domReady': './vendor/domReady',
 
     },
     shim: {
+        'jquery': {'exports': 'jquery', 'deps': ['']},
         'angular': {'exports': 'angular', 'deps': ['']},
-        'moment': {'exports': 'moment', 'deps': ['']}
+        'moment': {'exports': 'moment', 'deps': ['']},
+        'datetimepicker': {'exports': 'datetimepicker', 'deps': ['moment','angular','jquery','bootstrap']}
     },
     deps: ['appBoot']
 });

@@ -18,11 +18,9 @@ define(
                 minView: 'minute',
                 startView: 'day'
             })
-            .directive('datepicker',['$log','datePickerConf',function($log,defaultConf) {
-
-
-                function DateObject() {
-
+            .directive('datepicker',['$document','$log','datePickerConf',function($document,$log,defaultConf) {
+                function DateObject(time) {
+                     return time;
                 }
                 function initDateView() {
                     var conf = {};
@@ -30,10 +28,11 @@ define(
                     dateRender(conf,dateObj);
                 }
                 function dateRender(conf,dateObj) {
-
+                    $log.info('first render')
                 }
                 return {
                 restrict:'E',
+                require: 'ngModel',
                 template:
                     '<div class="date-picker">' +
                         '<div class="input-group" >' +
@@ -44,7 +43,7 @@ define(
                             '<table class="table table-striped">' +
                                 '<thead>' +
                                     '<tr>' +
-                                        '<th class="left"></th>' +
+                                        '<th class="left">{{date}}</th>' +
                                         '<th class="switch" data-ng-click="changeView()"></th>' +
                                         '<th class="right"></th>' +
                                     '</tr>' +
@@ -59,7 +58,21 @@ define(
                         '</div>' +
                     '</div>',
                 replace:true,
-                link:function(scope,element,attrs) {
+                scope:{
+                    date:"@"
+                },
+                link:function(scope,element,attrs,ngModelCtrl) {
+
+
+                    $log.info(ngModelCtrl);
+                    scope.$watch(scope.date,function() {
+                        scope.date = DateObject('elliot');
+                        $log.log('yes')
+
+                    });
+                    dateRender();
+
+                    $log.info(element);
 
                     var dateFactory = {
                         year:function(unixDate) {
@@ -97,7 +110,7 @@ define(
                             scope.checked = false;
                         }
                     }
-                    scope.day = "2015/03/09"
+
                 }
             }
         }]);
