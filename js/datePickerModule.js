@@ -18,7 +18,7 @@ define(
                 minView: 'minute',
                 startView: 'day'
             })
-            .directive('datepicker',['$document','$log','datePickerConf',function($document,$log,defaultConf) {
+            .directive('datepicker',['$document','$log','datePickerConf',function($document,$log,defaultConf,element) {
                 function DateObject(time) {
                      return time;
                 }

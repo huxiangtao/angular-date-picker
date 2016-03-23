@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular-Test</title>
+    <!--<script data-main="main.js" src="node_modules/requirejs/require.js"></script>
+    <script>
+        var appName = "angualrTestModule"
+    </script>-->
+    <script type="text/javascript" src="dist/node_modules/jquery.min.js"></script>
+    <script type="text/javascript" src="js/temp/amdtest.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var name = "window";
+    var nameObj = {
+        name: "TOM",
+        showName : function() {
+            alert(this.name);
+        },
+        waiteShoeName: function() {
+            var newfun = this.showName
+            newfun()
+        },
+        newWaiteShoeName: function() {
+            var that = this;
+            !function(_callback) {_callback()} (
+                that.showName
+            )
+        },
+        wrongWait:function() {
+            var that = this;
+            setTimeout(that.showName,1000);
+        },
+        rightWait: function() {
+            var that = this;
+            setTimeout(function(){
+                that.showName()
+            },500)
+        }
+    }
+
+    //nameObj.showName();
+    //nameObj.waiteShoeName(); // 等价于 waiteShoeName();
+    //nameObj.newWaiteShoeName();// 等价于 waiteShoeName();
+    //nameObj.rightWait();// 等价于 waiteShoeName();
+    //nameObj.wrongWait();// 等价于 waiteShoeName();
+
+
+
+</script>
+    <div class="container">
+        <div class="row">
+            <div class="elliot"></div>
+            <script type="text/javascript">
+                $('.elliot').testFunc();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
