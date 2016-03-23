@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Angular-test</title>
+    <script type="text/javascript" src="dist/node_modules/angular.min.js"></script>
+    <script type="text/javascript" src="js/temp/angularTestModule.js"></script>
 </head>
-<body>
-
+<body ng-app="angularTestModule">
+    <div ng-controller="angularTestCtrl">
+        <ul>
+            <li>{{name}}</li>
+            <li>{{age}}</li>
+        </ul>
+    </div>
 </body>
 </html>
