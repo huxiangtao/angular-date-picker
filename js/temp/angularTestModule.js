@@ -13,10 +13,10 @@ angular.module('angularTestModule',[])
     })
     .directive('test',function() {
         return {
-            template:'<div>yes</div>',
+            template:'<div ng-click="beforerender()">yes</div>',
             replace:true,
             link: function(scope) {
-                scope.beforerender()
+                //scope.beforerender()
             },
             scope: {
                 beforerender:'&'
