@@ -10,16 +10,26 @@ angular.module('angularTestModule',[])
         $scope.change = function() {
             alert("window")
         }
+        $scope.elliot = "elliot"
+        $scope.date = "2016/03/04"
     })
     .directive('test',['$log',function($log) {
         return {
-            template:'<div ng-click="beforerender()">yes</div>',
+            restrict: 'E',
+            require: 'ngModel',
+            template:
+            '<div>' +
+                '<div ng-click="beforerender()">yes</div>' +
+                '<span>{{date}}</span>' +
+            '</div>',
             replace:true,
             link: function(scope) {
                 $log.info(scope.beforerender)
+                $log.info(scope.date)
                 //scope.beforerender()
             },
             scope: {
+                date:'=',
                 beforerender:'&'
             }
 
