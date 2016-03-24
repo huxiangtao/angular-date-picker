@@ -7,7 +7,7 @@ require.config({
     paths: {
         'angular': '../node_modules/angular.min',
         'moment': '../node_modules/moment.min',
-        'datetimepicker': '../node_modules/datetimepicker',
+        'datetimepicker': './temp/datetimepicker',
         'bootstrap': '../node_modules/bootstrap.min',
         'jquery': '../node_modules/jquery.min',
         'domReady': './vendor/domReady',
