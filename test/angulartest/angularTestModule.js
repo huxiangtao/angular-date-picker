@@ -10,7 +10,7 @@ angular.module('angularTestModule',[])
         $scope.change = function() {
             alert("window")
         }
-        $scope.elliot = "elliot"
+        $scope.elliot = "elliots"
         $scope.date = "2016/03/04"
     })
     .directive('test',['$log',function($log) {
