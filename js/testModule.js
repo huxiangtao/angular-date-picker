@@ -6,15 +6,17 @@ define(
     'testModule',
     [
         'angular',
-        'datePickerModule'
+        'moment',
+        'jquery',
+        'datetimepicker'
     ],
     function(ng){
         'use strict'
-        return ng.module('testModule',['datePickerModule']).controller('testCtrl',function($scope) {
-            $scope.$watch($scope.date,function() {
+        return ng.module('testModule',['ui.bootstrap.datetimepicker']).controller('testCtrl',function($scope) {
+           /* $scope.$watch($scope.date,function() {
                 console.log($scope.date);
                 console.log('$scope.date');
-            });
+            });*/
 
         })
     }
