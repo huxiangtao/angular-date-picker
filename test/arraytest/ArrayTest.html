@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array-Test</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="arrayTestModule.js"></script>
+</head>
+<body ng-app="arrayTestModule">
+    <div class="container" ng-controller="arrayTestCtrl">
+        <div class="row">
+            <div class="col-sm-6">
+                <p></p>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="uid" ng-model="userid" class="form-control" id="inputPassword2" placeholder="user id">
+                  </div>
+                  <button type="submit" class="btn btn-primary" ng-click="addPermission()">commit</button>
+                </form>
+                <div id="modalDiv" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          </div>
+                          <div class="modal-body">
+                            <h3 ng-bind="user.name"></h3>
+                              <ul class="list-unstyled">
+                                  <li ng-repeat="perm in perms">
+                                      <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" value="{{perm.permname}}" ng-click="toggleSelection(perm)" > {{perm.permname}}
+                                      </label>
+                                    </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" ng-click="submit()">Save changes</button>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
